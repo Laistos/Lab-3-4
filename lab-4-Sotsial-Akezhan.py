@@ -1,22 +1,23 @@
 # # task 1.1
 # try:
 #    word = str(input())
-#    letter_list = ()
-# 
-#    for char in word:
+#    letter_list = () #создаем список, в который будут добавляться буквы
+#
+#    for char in word: #цикл, который проходит по каждому символу в слове word
 #       if char == ' ':
-#          continue
-#       letter_list += (char,)
+#          continue #если в слове будет пробел, то программа просто отбросит его и начнет проходить дальше
+#       letter_list += (char,) #если символ не равен проблему, то символ добавляется с список letter_list
 # 
-#    print(letter_list)
+#    print(letter_list) #выводим список
 # except ValueError:
 #    print('error')
 
 # # task 1.2
 # try:
-#    letters = ('T', 'h', 'e', 'B', 'i', 'g', 'B', 'e', 'n')
-#    result = ''.join(letters)
-#    print(result)
+#    letters_input = input()
+#    letters_input = letters_input.replace(" ", "").replace("'", "").replace('"', '') #Удаляет пробелы и кавычки из ввода
+#    letters = ''.join(letters_input.split(',')) #разделят строки на подстроки, на основе запятой
+#    print(letters)
 # except ValueError:
 #    print('error')
 
@@ -24,11 +25,11 @@
 # try:
 #    first_list = str(input('tuple_A: '))
 #    second_list = str(input('tuple_B: '))
-#    len_first = len(first_list)
-#    len_second = len(second_list)
-#    mid_index_fisrt = len_first // 2
-#    mid_index_second = len_second // 2
-#    result = first_list[:mid_index_fisrt] + second_list[mid_index_second:]
+#    len_first = len(first_list) # узнает длину первого списка
+#    len_second = len(second_list) #узнает длину второго списка
+#    mid_index_fisrt = len_first // 2 #получаем целое число, которое будет индексом середины в 1 списке. Индекс середины это индекс элемента, который разделяет, в этом случае, список на две равные части, чтобы мы смогли взять одну половину для решения задачи
+#    mid_index_second = len_second // 2 #делаем то же самое только для 2 списка
+#    result = first_list[:mid_index_fisrt] + second_list[mid_index_second:] #складываем две половины списков, в первом списке берем диапазон от начала до середины, во втором списке от середины до конца
 #    print(result)
 # except ValueError:
 #    print('error')
@@ -36,40 +37,40 @@
 # #task 1.4
 # try:
 #    list = input()
-#    splitted_list = list.split(',')
-#    list_counter = []
-#    repeated_element = []
+#    splitted_list = list.split(',') #разделяет введенную строку на подстроки, используя запятые в качестве разделителя. Результат разделения сохраняется в виде списка строк
+#    list_counter = [] #массив, в который будут добавляться элементы и их количество
+#    repeated_element = [] #массив, в который будут добавляться повторяющие элементы
 
-#    for element_list in splitted_list:
-#       if element_list == ' ':
+#    for element_list in splitted_list: #проходимся по каждому элементу в списке
+#       if element_list == ' ': #убираем из списка пробелы, чтобы не в выводе не отобразился пробел и его количесиво
 #          continue
-#       if element_list not in repeated_element:
-#          count = splitted_list.count(element_list)
-#          repeated_element.append(element_list)
-#          list_counter.append((element_list, count))
+#       if element_list not in repeated_element: #условие, которое проверяет был ли элемент уже обработан, если нет, то начинается его подсчет
+#          count = splitted_list.count(element_list) #подсчитывает сколько раз элемент был введен пользователем
+#          repeated_element.append(element_list) #добавляет элемент списка в массив repeated_element, тем самым в дальнейшем знать, что такой элемент уже был
+#          list_counter.append((element_list, count)) #элемент и количество добавляются в список list_counter
 
-#    result = tuple(list_counter)
-#    print(result)
+#    result = tuple(list_counter) #преобразует массив в кортеж
+#    print(result) 
 # except ValueError:
 #    print('error')
 
 # #task 1.5
 # try:
 #    list = input()
-#    splitted_list = list.split(',')
+#    splitted_list = list.split(',') #аналогично тому, что уже описывал выше в предыдущих заданиях
 
-#    integer = []
-#    floats = []
-#    string = []
+#    integer = [] #массив куда будут записываться данные типа integer
+#    floats = [] #массив куда будут записываться данные типа float
+#    string = [] #массив куда будут записываться данные типа string
 
-#    for item in splitted_list:
-#       item = item.strip()
-#       if item.isnumeric():
-#          integer.append(int(item))
-#       elif item.replace('.', '', 1).isdigit():
-#          floats.append(float(item))
+#    for item in splitted_list: #проходится по каждому элементу в списке
+#       item = item.strip() #удаляет начальные и конечные пробелы из элемента, чтобы убрать возможные пробелы вокруг значений
+#       if item.isnumeric(): #проверяет является ли введенное значение целым числом
+#          integer.append(int(item)) #если да, то добавляет его в массив integer и преобразует элемент в число
+#       elif item.replace('.', '', 1).isdigit(): #проверяет, является ли элемент числом с плавающей точкой. Если он находит точку, то удалает её и затем проверяет, является ли остальная часть элемента числом
+#          floats.append(float(item)) #если условие выполняется, то элемент добавляется в массив floats и преобразуется в типа float 
 #       else:
-#          string.append(item)
+#          string.append(item) #если никакое из вышеописанных условий не выполняется, то элемент добавляется в массив строк
 # 
 #    print(integer)
 #    print(floats)
@@ -80,18 +81,19 @@
 # #task 2.1
 # try:
 #    word = str(input())
-#    letter_list = set()
-#    repeated_char = []
-#    for char in word:
-#       if char == ' ':
-#          continue
-#       if char not in letter_list:
-#          repeated_char.append(char)
-#          letter_list.add(char)
-# 
-#    print(repeated_char)
+#    letter_list = set() # создаем список, в который будут добавляться буквы, set нужен для отслеживания повторяющихся символов. Если они есть, то метод не пропустит их, если нет, то добавит
+#    letter = [] #созадем массив в который добавляются буквы
+
+#    for char in word: #проходится по каждой букве в слове
+#       if char == ' ': 
+#          continue #если встрчаются пробелы, то код тх убирает, чтобы они не выводились в результате
+#       if char not in letter_list: #условие, при котором проверяется была ли уже буква в массиве уникальных букв, если нет то выполняется нижеописанный код
+#          letter.append(char) #буква добавляется в массив букв
+#          letter_list.add(char) #буква добавляется в массив уникальных букв, чтобы код запонил её как уже встрчавшуюся
+
+#    print(letter) #выводи список букв в слове, без повторяющихся букв
 # except ValueError:
-#    print('error')
+#   print('error')
 
 # #task 2.2
 # try:
@@ -109,36 +111,36 @@
 
 # # task 2.3
 # try:
-#    entered_set_A = input()
-#    entered_set_B = input()
+#    entered_set_A = input() #ввод через запятую
+#    entered_set_B = input() #ввод через запятую
 
-#    set_A = entered_set_A.split(',')
-#    set_B = entered_set_B.split(',')
+#    set_A = entered_set_A.split(',') #тот же принцип, что и предыдущих кодах
+#    set_B = entered_set_B.split(',') #тот же принцип, что и предыдущих кодах
 
-#    for element in set_B:
-#       if element in set_A:
-#          set_A.remove(element)
+#    for element in set_B: #пробегает по каждому элементу в списке B 
+#       if element in set_A: #условие, которое проверяет элемнт списка B в списке А
+#          set_A.remove(element) #если выполняется условие, то элемент удаляется из списка А
 
-#    print(set_A)
+#    print(set_A) #выводит обновленный список А в котором не будет тех же эелментов, что и в списке В
 # except ValueError:
 #    print('error')
 
 # # task 2.4
 # try:
-#    entered_set_A = input('set_A: ')
-#    entered_set_B = input('set_B: ')
-#    entered_set_C = input('set_C: ')
+#    entered_set_A = input('set_A: ') #ввод через запятую
+#    entered_set_B = input('set_B: ') #ввод через запятую
+#    entered_set_C = input('set_C: ') #ввод через запятую
 
-#    set_A = entered_set_A.split(',')
-#    set_B = entered_set_B.split(',')
-#    set_C = set(entered_set_C.split(','))
+#    set_A = entered_set_A.split(',') #тот же принцип, что и предыдущих кодах
+#    set_B = entered_set_B.split(',') #тот же принцип, что и предыдущих кодах
+#    set_C = set(entered_set_C.split(',')) #тот же принцип, что и предыдущих кодах, однако, тут мы используем метод set, чтобы собрать только те числа, которые были и в списке А, и в списке В, при этом это уникальные числа, которые не повторяются, по типу несколько раз в списках будет 9 9, 2 2, 4 4 и тд
 
-#    for element in set_B:
-#       if element in set_A:
-#          set_A.remove(element)
-#          set_C.add(element)
+#    for element in set_B: #перебирает каждое число в списке В
+#       if element in set_A: #условие, которое проверяет есть ли число из списка В в списке А
+#          set_A.remove(element) #если условие выполняется, то число удаляется из списка А
+#          set_C.add(element) #затем добавляется в список С
 
-#    print(set_C)
+#    print(set_C) #выводит новый список С, который содержит числа, которые были уже в самом списке и новые числа, которое были взяты из списков А и В
 # except ValueError:
 #    print('error')
 
@@ -146,43 +148,60 @@
 # try:
 #    import itertools
 #    import random
+#    #импорт двух библиотек, которые помогут решить задачу, библиотеки для использования операций комбинаторики и случайного выбора
 
-#    entered_set_A = input('set_A: ')
-#    n = int(input())
-#    m = int(input())
+#    entered_set_A = input('set_A: ') #ввод через запятую
+#    n = int(input()) #число, которое указывает количество чисел в комбинации
+#    m = int(input()) #количество комбинаций
 
-#    set_A = entered_set_A.split(',')
+#    set_A = entered_set_A.split(',') #разделяет строку на подстроки, разделяет запятой и сохраняет результат в виде списка строк
 
-#    combinations = list(itertools.combinations(set_A, n))
+#    combinations = list(itertools.combinations(set_A, n)) #используя библиотеку itertools, создает все возможные комбинации согласно числу n, то есть длины комбинации, из чисел из списка А
 
-#    m = min(m, len(combinations))
+#    m = min(m, len(combinations)) #выбирает минимальное значение между m (значение, которое введенно пользователем) и количеством возможных комбинаций, чтобы избежать ошибки, в слуаче, если m больше, чем количество доступных комбинаций.  
 
-#    selected_combinations = random.sample(combinations, m)
+#    selected_combinations = random.sample(combinations, m) #исползуя библиотеку random генерирует случайные m(количество, которое ввел пользователь) комбинаций из списка combinations, которое мы определили ранее
 
-#    print(selected_combinations)
+#    print(selected_combinations) #выводит эти самые комбинации
 # except ValueError:
 #    print('error')
 
 # # task 3
 # try:
 #    from itertools import groupby
+#    #Импортируется функция groupby из библиотеки itertools, которая будет использоваться для группировки элементов списка по некоторому ключу, про ключ будет объяснено ниже
 
-#    cars_list = []
+#    cars_list = [] #Создается пустой список, в который будут хранениться информации о машинах
 
-#    while True:
+#    while True: #создается бесконечный цикл, который будет остановле, когда пользователь введ stop
 #       manufacturer = input("manufacturer (type 'stop' to finish): ")
 #       if manufacturer.lower() == 'stop':
 #          break
-#       model = input("model: ")
-#       cars_list.append((manufacturer, model))
+#       model = input("model: ") #вводим модель машины
+#       cars_list.append((manufacturer, model)) #в список cars_list добавляются производитель и модель машины
 
 #    cars_list.sort(key=lambda x: x[0])
+#    #.sort() метод, который нужен для сортировки
+#    #key=lambda x: x[0] представляет собой лямбда-функцию, которая используется для извлечения значения ключа, по которому будут сортироваться элементы в списке. Иными словами говорит функции сортировки, какие значения использовать для определения порядка сортировки
+#    #lambda x: x[0]: Это создание лямбда-функции. x здесь представляет элемент списка, который будет сортироваться, а x[0] обращается к первому элементу этого элемента списка, то есть к производителю автомобиля, он же и является ключом для сортировки(key) 
 
-#    for manufacturer, group in groupby(cars_list, key=lambda x: x[0]):
+#    for manufacturer, group in groupby(cars_list, key=lambda x: x[0]): 
+#    #используется функция groupby из библиотеки itertools для группировки элементов списка cars_list по значению, полученному из первого элемента каждой пары, то есть по производителю
+   
+#    #for manufacturer, group in это начало цикла, который будет использоваться для итерации по результатам группировки
+   
+#    #manufacturer и group это две переменные, в которые будут сохраняться результаты группировки. manufacturer будет содержать значение производителя, а group будет представлять объект, содержащий все элементы из списка cars_list, которые относятся к этому производителю
+
+#    #groupby(cars_list, key=lambda x: x[0]) происходит вызов функции groupby из библиотеки itertools, сама функция возвращает кортежи, состоящие из значения ключа и группы элементов. Значение ключа(key=lambda x: x[0], про которое было сказано выше) и группа элементов это наш список производителей и моделей машин(cars_list)
+
 #       models = list(model for _, model in group)
-#       print(f'{manufacturer} {len(models)}')
-#       for model in models:
-#          print(f'- {model}')
+#       #эта строка создает список models, который содержит только модели автомобилей, игнорируя производителя, для группы автомобилей с одним и тем же производителем
+#       #model for _, model in group этот кусок кода итерируется через объект group, который представляет собой группу записей об автомобилях с одним и тем же производителем. В каждой итерации переменной model присваивается второй элемент кортежа из group (то есть модель автомобиля), а переменной _ присваивается первый элемент кортежа (производитель). Символ "_" используется в этом контексте как "заглушка" для переменной, которую мы не собираемся использовать. Иными словами: "собери все модели (второй элемент кортежа) для каждой записи в группе, и проигнорируй первый элемент(производитель)" 
+#       #models = list(): Затем генератор списка передается функции list(), которая преобразует его в список. Таким образом, создается список models, содержащий только модели автомобилей для текущей группы с одним и тем же производителем.
+#       print(f'{manufacturer} {len(models)}') #выводит производителя и количество моделей этого производителя
+#       for model in models: #происходит перебор элементов по списку models, про который я говорил выше
+#          #На каждой итерации цикла, переменная model будет содержать следующий элемент из списка models. Таким образом, на каждой итерации мы получаем доступ к одной из моделей машины в списке models
+#          print(f'- {model}') #будет выводится модель с добавление тире перед ней
 
 # except ValueError:
 #    print('error')
