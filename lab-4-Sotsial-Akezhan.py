@@ -14,7 +14,7 @@
 
 # # task 1.2
 # try:
-#    letters_input = input()
+#    letters_input = input()#ввод через запятую
 #    letters_input = letters_input.replace(" ", "").replace("'", "").replace('"', '') #Удаляет пробелы и кавычки из ввода
 #    letters = ''.join(letters_input.split(',')) #разделят строки на подстроки, на основе запятой
 #    print(letters)
@@ -23,8 +23,8 @@
 
 # # task 1.3
 # try:
-#    first_list = str(input('tuple_A: '))
-#    second_list = str(input('tuple_B: '))
+#    first_list = str(input('tuple_A: '))#ввод через запятую
+#    second_list = str(input('tuple_B: '))#ввод через запятую
 #    len_first = len(first_list) # узнает длину первого списка
 #    len_second = len(second_list) #узнает длину второго списка
 #    mid_index_fisrt = len_first // 2 #получаем целое число, которое будет индексом середины в 1 списке. Индекс середины это индекс элемента, который разделяет, в этом случае, список на две равные части, чтобы мы смогли взять одну половину для решения задачи
@@ -36,7 +36,7 @@
 
 # #task 1.4
 # try:
-#    list = input()
+#    list = input()#ввод через запятую
 #    splitted_list = list.split(',') #разделяет введенную строку на подстроки, используя запятые в качестве разделителя. Результат разделения сохраняется в виде списка строк
 #    list_counter = [] #массив, в который будут добавляться элементы и их количество
 #    repeated_element = [] #массив, в который будут добавляться повторяющие элементы
@@ -56,7 +56,7 @@
 
 # #task 1.5
 # try:
-#    list = input()
+#    list = input()#ввод через запятую
 #    splitted_list = list.split(',') #аналогично тому, что уже описывал выше в предыдущих заданиях
 
 #    integer = [] #массив куда будут записываться данные типа integer
@@ -80,7 +80,7 @@
 
 # #task 2.1
 # try:
-#    word = str(input())
+#    word = str(input())#ввод через запятую
 #    letter_list = set() # создаем список, в который будут добавляться буквы, set нужен для отслеживания повторяющихся символов. Если они есть, то метод не пропустит их, если нет, то добавит
 #    letter = [] #созадем массив в который добавляются буквы
 
@@ -97,8 +97,8 @@
 
 # #task 2.2
 # try:
-#    set_A = input("set A: ")
-#    set_B = input("set B: ")
+#    set_A = input("set A: ")#ввод через запятую
+#    set_B = input("set B: ")#ввод через запятую
 
 #    splitted_A = set(set_A.split(','))
 #    splitted_B = set(set_B.split(','))
